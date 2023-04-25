@@ -130,7 +130,7 @@ int print_int(va_list types, char output_buffer[],
 	unsigned long int num;
 	n = convert_size_number(n, size);
 	if (n == 0)
-        	output_buffer[i--] = '0';
+        output_buffer[i--] = '0';
 
 	output_buffer[BUFF_SIZE - 1 = '\0';
 	num = (unsigned long int)n;
