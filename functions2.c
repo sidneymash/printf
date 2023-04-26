@@ -21,7 +21,7 @@ int print_pointer(va_list types, char buffer[],
 	void *addrs = va_arg(types, void *);
 
 	UNUSED(width);
-	UNUSED(size);
+	UNUSED(size_sps);
 
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
@@ -42,7 +42,7 @@ int print_pointer(va_list types, char buffer[],
 		padd = '0';
 	if (f_flags & F_PLUS)
 		extra_c = '+', length++;
-	else if (flags & F_SPACE)
+	else if (f_flags & F_SPACE)
 		extra_c = ' ', length++;
 
 	ind++;

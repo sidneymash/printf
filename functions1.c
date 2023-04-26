@@ -56,7 +56,7 @@ int print_octal(va_list types, char buffer[],
 
 	UNUSED(width);
 
-	num = convert_size_unsgnd(num, size);
+	num = convert_size_unsgnd(num, size_sps);
 
 	if (num == 0)
 		buffer[i--] = '0';
@@ -69,7 +69,7 @@ int print_octal(va_list types, char buffer[],
 		num /= 8;
 	}
 
-	if (flags & F_HASH && init_num != 0)
+	if (f_flags & F_HASH && init_num != 0)
 		buffer[i--] = '0';
 
 	i++;

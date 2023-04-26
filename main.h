@@ -40,109 +40,78 @@ struct fmt
 typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
-<<<<<<< HEAD
 int handle_print(const char *fmt, int *format_index,
-=======
-int handle_print(const char *fmt, int *i,
->>>>>>> refs/remotes/origin/master
-va_list list, char buffer[], int f_flags, int width, int precision, int size);
+va_list list, char buffer[], int f_flags, int width, int precision, int size_sps);
 
 /****** FUNCTIONS ******/
 
 /* Funtions to print chars and strings */
 int print_char(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 int print_string(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 int print_percent(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 
 /* Functions to print numbers */
 int print_int(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 int print_binary(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 int print_unsigned(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 int print_octal(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 int print_hexadecimal(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 int print_hexa_upper(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 
 int print_hexa(va_list types, char map_to[],
-char buffer[], int f_flags, char flag_ch, int width, int precision, int size);
+char buffer[], int f_flags, char flag_ch, int width, int precision, int size_sps);
 
 /* Function to print non printable characters */
 int print_non_printable(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+	int f_flags, int width, int precision, int size_sps);
 
 /* Funcion to print memory address */
 int print_pointer(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+int f_flags, int width, int precision, int size_sps);
 
 /* Funciotns to handle other specifiers */
-<<<<<<< HEAD
 int get_flags(const char *format, int *format_index);
 int get_width(const char *format, int *format_index, va_list list);
 int get_precision(const char *format, int *format_index, va_list list);
 int get_size(const char *format, int *format_index);
-=======
-int get_f_flags(const char *format, int *i);
-int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
-int get_size(const char *format, int *i);
->>>>>>> refs/remotes/origin/master
-
-/Function to print string in reverse/
+/*Function to print string in reverse*/
 int print_reverse(va_list types, char buffer[],
-	int f_flags, int width, int precision, int size);
+int f_flags, int width, int precision, int size_sps);
 
-/Function to print a string in rot 13/
+/*Function to print a string in rot 13*/
 int print_rot13string(va_list types, char buffer[],
-<<<<<<< HEAD
-	int f_flags, int width, int precision, int size_sps);
+int f_flags, int width, int precision, int size_sps);
 
 /* width handler */
 int handle_write_char(char c, char buffer[],
-	int f_flags, int width, int precision, int size_sps);
+int f_flags, int width, int precision, int size_sps);
 int write_number(int is_positive, int ind, char buffer[],
-	int f_flags, int width, int precision, int size_sps);
-=======
-	int f_flags, int width, int precision, int size);
-
+int f_flags, int width, int precision, int size_sps);
 /* width handler */
 int handle_write_char(char c, char buffer[],
-	int f_flags, int width, int precision, int size);
+int f_flags, int width, int precision, int size_sps);
 int write_number(int is_positive, int ind, char buffer[],
-	int f_flags, int width, int precision, int size);
->>>>>>> refs/remotes/origin/master
+int f_flags, int width, int precision, int size_sps);
 int write_num(int ind, char bff[], int f_flags, int width, int precision,
-	int length, char padd, char extra_c);
+int length, char padd, char extra_c);
 int write_pointer(char buffer[], int ind, int length,
-	int width, int f_flags, char padd, char extra_c, int padd_start);
-
+int width, int f_flags, char padd, char extra_c, int padd_start);
 int write_unsgnd(int is_negative, int ind,
 char buffer[],
-<<<<<<< HEAD
-	int f_flags, int width, int precision, int size_sps);
-=======
-	int f_flags, int width, int precision, int size);
->>>>>>> refs/remotes/origin/master
-
+int f_flags, int width, int precision, int size_sps);
 /****** UTILS ******/
 int is_printable(char);
 int append_hexa_code(char, char[], int);
 int is_digit(char);
-
 long int convert_size_number(long int num, int size_sps);
 long int convert_size_unsgnd(unsigned long int num, int size_sps);
-
-#endif /* MAIN_H */
-
-
-<<<<<<< HEAD
-=======
-#endif /* MAIN_H */
->>>>>>> refs/remotes/origin/master
+#endif
