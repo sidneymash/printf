@@ -77,7 +77,7 @@ long int convert_size_number(long int num, int size_sps)
  */
 long int convert_size_unsgnd(unsigned long int num, int size_sps)
 {
-	if (size_sp == S_LONG)
+	if (size_sps == S_LONG)
 		return (num);
 	else if (size_sps == S_SHORT)
 		return ((unsigned short)num);

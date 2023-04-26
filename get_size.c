@@ -10,7 +10,7 @@
 int get_size(const char *format, int *format_index)
 {
 	int curr_index = *format_index + 1;
-	int size = 0;
+	int size_sps = 0;
 
 	if (format[curr_index] == 'l')
 		size = S_LONG;
@@ -22,5 +22,5 @@ int get_size(const char *format, int *format_index)
 	else
 		*format_index = curr_index;
 
-	return (size);
+	return (size_sps);
 }
